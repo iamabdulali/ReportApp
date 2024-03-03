@@ -11,7 +11,7 @@ const Step3 = () => {
 
   const handleChange = (valueName, event) => {
     setFieldValue(valueName, event.target.value);
-    if (valueName === "victimWho") {
+    if (valueName === "victimSelf") {
       setIsVictimSelf(event.target.value === "self");
     }
   };
@@ -67,18 +67,18 @@ const Step3 = () => {
                   />
                   <div className="flex items-center gap-5 flex-wrap">
                     <RadioButton
-                      name="victimWho"
+                      name="victimSelf"
                       value="yes"
                       onChange={(e) => {
-                        handleChange("victimWho", e);
+                        handleChange("victimSelf", e);
                         handleRemoveVictim(0);
                       }}
                     />
                     <RadioButton
-                      name="victimWho"
+                      name="victimSelf"
                       value="no"
                       onChange={(e) => {
-                        handleChange("victimWho", e);
+                        handleChange("victimSelf", e);
                         addVictimIfNoVictims();
                         setHeight(true);
                       }}
@@ -122,7 +122,7 @@ const Step3 = () => {
                     <div>
                       <label htmlFor={`Firstname${index}`}>
                         <TranslationComponent
-                          keys={["Firstname"]}
+                          keys={["firstname"]}
                           school={schoolType}
                         />
                       </label>
@@ -141,7 +141,7 @@ const Step3 = () => {
                     <div className="mt-3">
                       <label htmlFor={`Lastname${index}`}>
                         <TranslationComponent
-                          keys={["Lastname"]}
+                          keys={["lastname"]}
                           school={schoolType}
                         />
                       </label>

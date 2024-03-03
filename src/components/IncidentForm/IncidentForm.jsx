@@ -23,7 +23,7 @@ const initialValues = {
     Emailaddress: "",
     Role: "0",
   },
-  victimWho: "yes",
+  victimSelf: "yes",
   totalVictims: 0,
   totalBullies: 1,
   Victims: [],
@@ -107,7 +107,7 @@ const IncidentForm = () => {
 
     try {
       const response = await fetch(
-        "https://wjhulzebosch.nl/Avarix/MeldboxApi/Incident/New",
+        "https://wjhulzebosch.nl/Avarix/MeldboxApi/Incident/New?forceFail=true",
         {
           method: "POST",
           headers: {
@@ -124,6 +124,8 @@ const IncidentForm = () => {
       } else {
         console.error("Error sending form data:", response.status);
         // Handle error accordingly
+        const errorData = await response.json();
+        console.error("Error response body:", errorData);
       }
     } catch (error) {
       console.error("Error sending form data:", error);

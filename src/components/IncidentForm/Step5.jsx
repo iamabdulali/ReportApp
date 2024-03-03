@@ -91,7 +91,7 @@ const Step5 = () => {
                     <div>
                       <label htmlFor={`Firstname${index}`}>
                         <TranslationComponent
-                          keys={["Firstname"]}
+                          keys={["firstname"]}
                           school={schoolType}
                         />
                       </label>
@@ -110,7 +110,7 @@ const Step5 = () => {
                     <div className="mt-3">
                       <label htmlFor={`Lastname${index}`}>
                         <TranslationComponent
-                          keys={["Lastname"]}
+                          keys={["lastname"]}
                           school={schoolType}
                         />
                       </label>
